@@ -1,0 +1,14 @@
+---
+no-route: true
+health-check-type: none
+buildpack: https://github.com/gogolok/cloudfoundry-buildpack-elixir
+command: "mix run --no-halt"
+services:
+- rmq
+
+applications:
+- name: conn
+  # memory: 256M
+  # disk_quota: 256M
+  env:
+    HOST: "10.0.16.32"
